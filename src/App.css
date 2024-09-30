@@ -1,153 +1,109 @@
-.App {
-  text-align: center;
-}
-input{
-	outline: none;
-  border: none;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: "Kanit", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1 {
+  margin: 2rem 0;
+  font-weight: 400;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #9AD3BC; /* Assuming $green is green */
+  align-items: center;
+  width: fit-content;
+}
+
+section {
+  display: flex;
+  width: 70rem;
+  margin-bottom: 2rem;
+}
+
+.button {
+  border: 1px solid #ffd700; 
+  text-transform: uppercase;
+  width: fit-content;
+  padding: 0.3rem 1.5rem;
+  background-color: #9AD3BC; 
+  border-color: #9AD3BC; 
+  color: black; 
+  font-weight: 500;
+  font-family: "Kanit", sans-serif;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin-right: 0.25rem;
+}
+
+.button:hover {
+  background-color: #008000; 
+  border-color: #ffff00; 
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+  border-color: #ffff00; 
+  background-color: #ffff00; 
+  color: #ffffff; 
+}
+
+.button.addTask {
+  font-size: 3rem;
+  padding: 0 0 0.4rem 0;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 1rem;
+  margin-top: 2rem;
+}
+
+.button.moveTask {
+  font-size: 1.5rem;
+  padding: 0.5rem 0.5rem;
+  margin-bottom: 0;
+  line-height: 1rem;
+}
+
+.button.delete {
+  background-color: #ffc0cb; /* Assuming $pink is pink */
+  border-color: #ffc0cb; /* Assuming $pink is pink */
+}
+
+.button.delete:hover {
+  background-color: #ff0000; /* Assuming $red is red */
+  border-color: #ff0000; /* Assuming $red is red */
+}
+
+@media only screen and (max-width: 75rem) {
+  section {
+    width: 100%;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-h1{
-	font-weight: 700;
-	font-size: 45px;
-	font-family: 'Roboto', sans-serif;
-}
-
-.header{
-	margin-bottom: 80px;
-}
-#description{
-	font-size: 24px;
-}
-
-.form-wrap{
-	background: rgba(255,255,255,1);
-	width: 100%;
-	max-width: 850px;
-	padding: 50px;
-	margin: 0 auto;
-	position: relative;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	-webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
-	-moz-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
-	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
-}
-
-.form-group{
-	margin-bottom: 25px;
-}
-.form-group > label{
-	display: block;
-	font-size: 18px;	
-	color: #000;
-}
-.custom-control-label{
-	color: #000;
-	font-size: 16px;
-}
-.form-control{
-	height: 50px;
-	background: #ecf0f4;
-	border-color: transparent;
-	padding: 0 15px;
-	font-size: 16px;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-.form-control:focus{
-	border-color: #00bcd9;
-	-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
-	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
-	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
-}
-textarea.form-control{
-	height: 160px;
-	padding-top: 15px;
-	resize: none;
-}
-
-.btn{
-	padding: .657rem .75rem;
-	font-size: 18px;
-	letter-spacing: 0.050em;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #00bcd9;
-  border-color: #00bcd9;
-}
-
-.btn-primary:hover {
-  color: #00bcd9;
-  background-color: #ffffff;
-  border-color: #00bcd9;
-	-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
-	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
-	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
-}
-
-.btn-primary:focus, .btn-primary.focus {
-  color: #00bcd9;
-  background-color: #ffffff;
-  border-color: #00bcd9;
-  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
-	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
-	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
-}
-
-.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
-.show > .btn-primary.dropdown-toggle {
-  color: #00bcd9;
-  background-color: #ffffff;
-  border-color: #00bcd9;
-}
-
-.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
-.show > .btn-primary.dropdown-toggle:focus {
-  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
-	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
-	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
 }
